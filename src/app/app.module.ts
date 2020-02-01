@@ -13,6 +13,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CitiesComponent } from './pages/cities/cities.component';
 import { CityComponent } from './pages/city/city.component';
 import { NewCityComponent } from './pages/new-city/new-city.component';
+import {GeolocationService} from "./service/geolocation.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,9 +32,12 @@ import { NewCityComponent } from './pages/new-city/new-city.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    GeolocationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
