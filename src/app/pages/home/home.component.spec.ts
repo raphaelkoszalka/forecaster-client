@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FiveDayForecastComponent } from './five-day-forecast.component';
+import { HomeComponent } from './home.component';
 
-describe('FiveDayForecastComponent', () => {
-  let component: FiveDayForecastComponent;
-  let fixture: ComponentFixture<FiveDayForecastComponent>;
+describe('MainCardComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiveDayForecastComponent ]
+      declarations: [ HomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FiveDayForecastComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

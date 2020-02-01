@@ -1,1 +1,32 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <a routerLink="/">
+        <button mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+      </a>
+      <a routerLink="/cities">
+        <button mat-menu-item>
+          <mat-icon>location_city</mat-icon>
+          <span>Cities</span>
+        </button>
+      </a>
+      <a routerLink="/new-city">
+        <button mat-menu-item>
+          <mat-icon>plus_one</mat-icon>
+          <span>Add a new City</span>
+        </button>
+      </a>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </span>
+  <span class="fill-remaining-space">Weather Forecaster</span>
+</mat-toolbar>
