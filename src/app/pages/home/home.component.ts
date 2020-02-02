@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GeolocationService} from '../../service/geolocation.service';
 import {HttpServiceService} from '../../service/http-service.service';
-import {AppConstant} from '../../AppConstant';
+import {AppConstants} from '../../app-constants';
 
 @Component({
   selector: 'app-main-card',
@@ -30,12 +30,15 @@ export class HomeComponent {
 
   private getCityName(lat: number, lng: number): void {
     this.cityName = '';
-    const LOCATION_URL = AppConstant.GEOLOCATION_API + this.lat + ',' + this.lng + AppConstant.API_KEY;
-    console.log(LOCATION_URL);
-    this.http.get(AppConstant.GEOLOCATION_API + this.lat + ',' + this.lng + AppConstant.API_KEY).subscribe(position => {
+    const LOCATION_URL = AppConstants.GOOGLE_GEOLOCATION_API + this.lat + ',' + this.lng + AppConstants.GOOGLE_API_KEY;
+    this.http.get(LOCATION_URL).subscribe(position => {
       // not magic numbers, this is a static google maps object
       // for initial user location forecast
       this.cityName = position['results'][6]['address_components'][0]['long_name'];
     });
+  }
+
+  private getInitialCityWeather(lat: number, lng: number): void {
+
   }
 }
