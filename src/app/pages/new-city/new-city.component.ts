@@ -18,7 +18,7 @@ export class NewCityComponent {
       .replace('{city}', city) + AppConstants.OPEN_WEATHER_API_KEY;
     this.http.get(CITY_URL).subscribe(
       res => {
-        const cities = [];
+        const cities = JSON.parse(localStorage.getItem('cities'));
         cities.push(city);
         localStorage.setItem('cities', JSON.stringify(cities));
       });

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CurrentDayComponent } from './components/current-day/current-day.component';
-import { FiveDayForecastComponent } from './components/five-day-forecast/five-day-forecast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { CitiesComponent } from './pages/cities/cities.component';
@@ -25,7 +24,6 @@ import {FormsModule} from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     CurrentDayComponent,
-    FiveDayForecastComponent,
     HomeComponent,
     CitiesComponent,
     CityComponent,
