@@ -1,3 +1,20 @@
-<mat-card>
-  <h1 class="mat-primary">{{cityName}}</h1>
-</mat-card>
+<!--
+
+     I know that this ngIf shouldn't be here, should be a route resolver
+     but we've got a scenario that the end user might not allow the browser
+     to use it's geolocation api.
+
+     With the proper time, a little bit more than 2 and a half day I would
+     remove it and use a resolver treating the geolocation block and also
+     all http gets @ the HomeResolver.ts, the way it should be done.
+
+     I will do this. But right now I am focusing at delivering the test
+
+     About the itens showed at the tabs, it's just a matter of choosing the preferred ones,
+     this would be a task for the UX team with it's personas and more. I am focusing right now
+     at deliver a functional app with the functioning engine to adapt with necessary changes.
+
+-->
+
+<app-loader *ngIf="isLoading"></app-loader>
+<app-city-card *ngIf="!isLoading" [cityName]="cityName" [weather]="weather"></app-city-card>

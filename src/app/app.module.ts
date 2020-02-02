@@ -15,6 +15,8 @@ import { CityComponent } from './pages/city/city.component';
 import { NewCityComponent } from './pages/new-city/new-city.component';
 import {GeolocationService} from "./service/geolocation.service";
 import {HttpClientModule} from "@angular/common/http";
+import { LoaderComponent } from './components/loader/loader.component';
+import { CityCardComponent } from './components/city-card/city-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     CitiesComponent,
     CityComponent,
-    NewCityComponent
+    NewCityComponent,
+    LoaderComponent,
+    CityCardComponent
   ],
   imports: [
     BrowserModule,
