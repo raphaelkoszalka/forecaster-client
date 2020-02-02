@@ -3,7 +3,7 @@
 This is a micro-frontend with the purpose to show the forecast for each individual city added to back-end microservice database and display it's
 next 5 days weather forecast.
 
-#### Check it out at https://forecaster.linkmu.ch/
+##### Check it out at https://forecaster.linkmu.ch/ (found a bug at registering a new city, will fix it)
 
 ## Few Considerations
 
