@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GeolocationService} from '../../service/geolocation.service';
-import {HttpServiceService} from '../../service/http-service.service';
+import {HttpService} from '../../service/http.service';
 import {AppConstants} from '../../app-constants';
 
 @Component({
@@ -24,7 +24,7 @@ export class HomeComponent {
   // I know that I can write a simple business rule to avoid that, it's just a matter of the little time frame
   // to develop the whole test.
 
-  constructor(private geolocation: GeolocationService, private http: HttpServiceService) {
+  constructor(private geolocation: GeolocationService, private http: HttpService) {
     this.geolocation.getPosition().then( pos => {
       this.lat = pos.lat;
       this.lng = pos.lng;

@@ -1,3 +1,11 @@
 <mat-card>
-  New City
+  <h1>Add a new city</h1>
+  <div class="form-container">
+    <mat-form-field>
+      <input matInput placeholder="City Name" [(ngModel)]="cityName">
+    </mat-form-field>
+    <hr>
+    <button mat-raised-button align="end" (click)="saveCity(cityName)" color="primary">Save City</button>
+  </div>
 </mat-card>
+

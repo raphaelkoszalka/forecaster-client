@@ -11,6 +11,7 @@ import {
   MatExpansionModule,
   MatFormFieldModule
 } from '@angular/material';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {
     MatGridListModule,
     MatTabsModule,
     MatExpansionModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     MatButtonModule,
@@ -33,7 +35,8 @@ import {
     MatGridListModule,
     MatTabsModule,
     MatExpansionModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 
