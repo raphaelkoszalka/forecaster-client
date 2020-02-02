@@ -12,22 +12,17 @@
           <mat-grid-tile>
             <strong>{{w['weather'][0]['main']}}</strong>
           </mat-grid-tile>
-          <!--
-
-            Since the whole app were written in English
-            it would be a indiossyncrasy to put the temperature in celsius.
-
-            I know it's just a simple pipe to do that, but I preferred to maintain the coherence.
-            With more time I could've written a l10n that would translate the app, dates and temperatures
-
-          -->
           <mat-grid-tile>
-            <strong>Highest {{w['temp']['max']}}F. </strong>
-            <strong>.. Lowest {{w['temp']['min']}}F...</strong>
+            <strong>Highest: {{w['temp']['max']}} C</strong>
           </mat-grid-tile>
           <mat-grid-tile>
-            <strong>Sunrise {{ w['sunrise'] * 1000 | date: 'hh:mm:ss' }} - .</strong>
-            <strong> Sunset {{ w['sunset'] * 1000 | date: 'hh:mm:ss' }}</strong>
+            <strong>Lowest: {{w['temp']['min']}} C</strong>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <strong>Sunrise: {{ w['sunrise'] * 1000 | date: 'hh:mm:ss' }}</strong>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <strong>Sunset: {{ w['sunset'] * 1000 | date: 'hh:mm:ss' }}</strong>
           </mat-grid-tile>
         </mat-grid-list>
         <hr>
