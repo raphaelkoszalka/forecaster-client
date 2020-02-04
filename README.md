@@ -3,8 +3,6 @@
 This is a micro-frontend with the purpose to show the forecast for each individual city added to back-end microservice database and display it's
 next 5 days weather forecast.
 
-##### Check it out at https://forecaster.linkmu.ch/ (found a bug while registering a new city, will be fixed, it happens only at the 'production' version).
-
 ## Few Considerations
 
 I have chosen to develop the application  front-end using Angular 8 Framework.
