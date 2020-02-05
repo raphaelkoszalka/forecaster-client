@@ -22,14 +22,12 @@ export class CitiesComponent {
   }
 
   public cityHasBeenSelected(city, event) {
-    if (event.isUserInput) {
       this.isLoading = true;
       const CITY_URL = AppConstants.OPEN_WEATHER_API_CITY_EXISTS
         .replace('{city}',  city) + AppConstants.OPEN_WEATHER_API_KEY;
       this.http.get(CITY_URL).subscribe(res => {
         this.getSelectedCityWeather(res['coord']['lat'], res['coord']['lon']);
       });
-    }
   }
 
   // move duplicate method to father class
@@ -41,6 +39,7 @@ export class CitiesComponent {
       .replace('{cnt}', AppConstants.OPEN_WEATHER_API_NUMBER_OF_DAYS.toString()) + AppConstants.OPEN_WEATHER_API_KEY;
     this.http.get(WEATHER_URL).subscribe(weather => {
       this.weather = weather;
+      console.log(this.weather);
       this.isLoading = false;
     });
   }

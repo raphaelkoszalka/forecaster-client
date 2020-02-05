@@ -9,7 +9,8 @@ import {
   MatGridListModule,
   MatTabsModule,
   MatExpansionModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatListModule
 } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -26,7 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatExpansionModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +41,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatExpansionModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ]
 })
 

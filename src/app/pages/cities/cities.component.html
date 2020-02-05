@@ -2,18 +2,15 @@
   <h1>Cities</h1>
   <hr>
   <div class="form-container">
-    <mat-form-field>
-      <mat-select placeholder="Select" [(ngModel)]="selectedCity">
-        <mat-option
-          *ngFor="let city of cities; let i = index"
-          [value]="city"
-          (onSelectionChange)="cityHasBeenSelected(city, $event)"
-        >
-          {{city}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <mat-selection-list #shoes *ngIf="!isLoading">
+      <mat-list-option
+        *ngFor="let city of cities; let i = index"
+        (click)="cityHasBeenSelected(city, $event)"
+      >
+        {{city}}
+      </mat-list-option>
+    </mat-selection-list>
   </div>
 </mat-card>
 
-<app-city-card *ngIf="weather" [cityName]="cityName" [weather]="weather"></app-city-card>
+<app-city-card *ngIf="!isLoading" [cityName]="cityName" [weather]="weather"></app-city-card>
