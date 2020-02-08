@@ -1,10 +1,10 @@
 <mat-card>
-  <h1 class="primary">{{cityName}}</h1>
+  <h1 class="primary">{{city['city']['name']}}</h1>
   <hr>
-  <div >
+  <div>
     <mat-tab-group>
       <hr>
-      <mat-tab class="mat-tab" *ngFor="let w of weather['list']; let i = index" label="{{w['dt'] * 1000 | date}}">
+      <mat-tab class="mat-tab" *ngFor="let w of city['list']; let i = index" label="{{w['dt'] * 1000 | date}}">
         <mat-grid-list cols="2" rowHeight="10:1">
           <mat-grid-tile>
             <img src="https://www.openweathermap.org/img/w/{{w['weather'][0]['icon']}}.png" alt="">

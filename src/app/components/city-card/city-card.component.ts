@@ -5,13 +5,15 @@ import {Component, Input, OnInit} from '@angular/core';
   templateUrl: './city-card.component.html',
   styleUrls: ['./city-card.component.scss']
 })
-export class CityCardComponent  {
+export class CityCardComponent implements OnInit  {
 
   @Input()
-  public cityName: string;
-  @Input()
-  public weather: object;
+  public city: object;
 
-  constructor() { }
+  constructor() {
+  }
 
+  ngOnInit(): void {
+    console.log(this.city);
+  }
 }

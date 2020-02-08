@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AppConstants} from "../../app-constants";
+import {AppConstants} from '../../app-constants';
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpService} from "../../service/http.service";
 
 @Component({
@@ -7,27 +8,23 @@ import {HttpService} from "../../service/http.service";
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.scss']
 })
-export class CitiesComponent {
+
+export class CitiesComponent  {
 
   public cities: [];
   // no inferable type
   public isLoading = false;
-  public cityName: string;
-  public weather: object;
-  public selectedCity: string;
+  public city: object;
 
-  constructor(private http: HttpService) {
-    this.cities = JSON.parse(localStorage.getItem('cities'));
-    console.log(this.cities);
+  constructor(private router: Router, private route: ActivatedRoute, private http: HttpService) {
+    this.cities = route['data']['_value']['cities'];
   }
 
   public cityHasBeenSelected(city, event) {
-      this.isLoading = true;
-      const CITY_URL = AppConstants.OPEN_WEATHER_API_CITY_EXISTS
-        .replace('{city}',  city) + AppConstants.OPEN_WEATHER_API_KEY;
-      this.http.get(CITY_URL).subscribe(res => {
-        this.getSelectedCityWeather(res['coord']['lat'], res['coord']['lon']);
-      });
+    const CITY_URL = AppConstants.OPEN_WEATHER_API_CITY_EXISTS
+      .replace('{city}',  city['city']) + AppConstants.OPEN_WEATHER_API_KEY;
+    console.log(CITY_URL);
+    this.getSelectedCityWeather(city['lat'], city['lng']);
   }
 
   // move duplicate method to father class
@@ -37,9 +34,9 @@ export class CitiesComponent {
       .replace('{lat}', lat.toString())
       .replace('{lon}', lng.toString())
       .replace('{cnt}', AppConstants.OPEN_WEATHER_API_NUMBER_OF_DAYS.toString()) + AppConstants.OPEN_WEATHER_API_KEY;
-    this.http.get(WEATHER_URL).subscribe(weather => {
-      this.weather = weather;
-      console.log(this.weather);
+    this.http.get(WEATHER_URL).subscribe(city => {
+      console.log(city);
+      this.city = city;
       this.isLoading = false;
     });
   }
