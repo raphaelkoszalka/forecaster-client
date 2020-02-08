@@ -9,7 +9,7 @@ import {HttpService} from "../../service/http.service";
   styleUrls: ['./cities.component.scss']
 })
 
-export class CitiesComponent  {
+export class CitiesComponent implements OnInit {
 
   public cities: [];
   // no inferable type
@@ -20,7 +20,11 @@ export class CitiesComponent  {
     this.cities = route['data']['_value']['cities'];
   }
 
-  public cityHasBeenSelected(city, event) {
+  ngOnInit(): void {
+    this.cityHasBeenSelected(this.cities[0]);
+  }
+
+  public cityHasBeenSelected(city) {
     const CITY_URL = AppConstants.OPEN_WEATHER_API_CITY_EXISTS
       .replace('{city}',  city['city']) + AppConstants.OPEN_WEATHER_API_KEY;
     console.log(CITY_URL);

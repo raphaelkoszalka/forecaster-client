@@ -9,7 +9,7 @@
     <h1>Cities</h1>
     <hr>
     <div *ngFor="let city of cities; let i = index" class="list-item" style="margin-top: 5px; cursor: pointer">
-    <mat-card (click)="cityHasBeenSelected(city, $event)">
+    <mat-card (click)="cityHasBeenSelected(city)">
       {{city['city']}}
     </mat-card>
     </div>
