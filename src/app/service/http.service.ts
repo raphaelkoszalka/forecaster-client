@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
+import {CityModel} from "../pages/city/city.model";
 
 
 @Injectable({
@@ -11,13 +12,16 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  public get(endpoint: string): Observable<object> {
-    return this.http.get(endpoint)
-      .pipe(catchError(this.errorHandler));
+  private static errorHandler(error: HttpErrorResponse) {
+    return Observable.throw(error.message || 'city does not exist.');
   }
 
-  errorHandler(error: HttpErrorResponse) {
-    alert('city does not exist');
-    return Observable.throw(error.message || 'server error.');
+  public get(endpoint: string): Observable<object> {
+    return this.http.get(endpoint).pipe(catchError(HttpService.errorHandler));
   }
+
+  public post(endpoint: string, payload: CityModel): Observable<object> {
+    return this.http.post(endpoint, payload).pipe(catchError(HttpService.errorHandler));
+  }
+
 }

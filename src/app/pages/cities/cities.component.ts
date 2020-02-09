@@ -11,7 +11,7 @@ import {HttpService} from "../../service/http.service";
 
 export class CitiesComponent implements OnInit {
 
-  public cities: [];
+  public cities: object[];
   // no inferable type
   public isLoading = false;
   public city: object;
@@ -31,7 +31,6 @@ export class CitiesComponent implements OnInit {
     this.getSelectedCityWeather(city['lat'], city['lng']);
   }
 
-  // move duplicate method to father class
   private getSelectedCityWeather(lat: number, lng: number): void {
     this.isLoading = true;
     const WEATHER_URL = AppConstants.OPEN_WEATHER_API
@@ -39,7 +38,6 @@ export class CitiesComponent implements OnInit {
       .replace('{lon}', lng.toString())
       .replace('{cnt}', AppConstants.OPEN_WEATHER_API_NUMBER_OF_DAYS.toString()) + AppConstants.OPEN_WEATHER_API_KEY;
     this.http.get(WEATHER_URL).subscribe(city => {
-      console.log(city);
       this.city = city;
       this.isLoading = false;
     });

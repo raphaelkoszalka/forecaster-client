@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {CitiesComponent} from './pages/cities/cities.component';
-import {NewCityComponent} from './pages/new-city/new-city.component';
+import {CityComponent} from './pages/city/city.component';
 import {CitiesResolver} from './pages/cities/cities.resolver';
 
 
@@ -15,7 +15,7 @@ const routes: Routes = [{
   resolve: { cities : CitiesResolver }
 }, {
   path: 'new-city',
-  component: NewCityComponent
+  component: CityComponent
 }];
 
 @NgModule({

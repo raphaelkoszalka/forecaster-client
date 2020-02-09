@@ -10,7 +10,8 @@ import {
   MatTabsModule,
   MatExpansionModule,
   MatFormFieldModule,
-  MatListModule
+  MatListModule,
+  MatSnackBarModule
 } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -42,7 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ]
 })
 

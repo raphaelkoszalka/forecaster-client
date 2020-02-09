@@ -1,5 +1,5 @@
-export interface City {
-   city: string;
-   lat: string;
-   lng: string;
+export interface CityModel {
+  city: string;
+  lat: string;
+  lng: string;
 }
