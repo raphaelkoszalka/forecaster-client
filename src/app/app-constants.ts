@@ -10,4 +10,5 @@ export class AppConstants {
   public static SERVER_API_POST = AppConstants.SERVER_API_VERSION + 'new';
   public static SERVER_API_GET_ONE = AppConstants.SERVER_API_VERSION + 'city/{city}';
   public static SERVER_API_GET_ALL = AppConstants.SERVER_API_VERSION + 'cities';
+  public static SERVER_API_DELETE = AppConstants.SERVER_API_VERSION + 'delete/{city}';
 }

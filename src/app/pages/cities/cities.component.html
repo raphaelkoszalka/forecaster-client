@@ -11,6 +11,11 @@
     <div class="cities-scroller">
       <div *ngFor="let city of cities; let i = index" class="list-item" style="margin-top: 5px; cursor: pointer">
         <mat-card (click)="cityHasBeenSelected(city)">
+          <button mat-flat-button (click)="deleteCity(city)">
+            <i class="material-icons">
+              remove_circle
+            </i>
+          </button>
           {{city['city']}}
         </mat-card>
       </div>

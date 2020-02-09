@@ -24,4 +24,7 @@ export class HttpService {
     return this.http.post(endpoint, payload).pipe(catchError(HttpService.errorHandler));
   }
 
+  public delete(endpoint: string): Observable<object> {
+    return this.http.delete(endpoint).pipe(catchError(HttpService.errorHandler));
+  }
 }

@@ -42,4 +42,13 @@ export class CitiesComponent implements OnInit {
       this.isLoading = false;
     });
   }
+
+  public deleteCity(city): void {
+    this.http.delete(AppConstants.SERVER_API_DELETE.replace('{city}', city['city'])).subscribe(res => {
+      console.log(res);
+      alert('City deleted');
+      window.location.reload();
+    });
+  }
+
 }

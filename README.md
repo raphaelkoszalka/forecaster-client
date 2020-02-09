@@ -8,22 +8,11 @@ next 5 days weather forecast.
 I have chosen to develop the application  front-end using Angular 8 Framework.
 It works as a Single Page Application.
 
-Due to the little time frame (basically one weekend), there were a few things
-that I would like to have written in a different manner, using resolvers instead of
-*ngIf at some parts of the code.
-
-It's just 'xiitism', but that's ok, the application allows you to connect
-with OpenWeatherMap API and also Google Maps API to show you a home page with 
-your location weather (if you allow your browser geolocation).
-
-For example, if your IP Address is from Blummenau it will show you  the city weather
-for the day and the next four days (totalizing five).
-
 You can also add new cities, if existing on OpenWeatherMap API, to the application and then
 select those cities to see their forecast for the next five days.
 
-I know that the user experience is not so good, but I have tried to do my best, considering
-that my knowledge is more in a coding way.
+I know that the user experience is not that good, but I have tried to do my best, considering
+that my knowledge is more in a coding way. For example I should use Material Snackbars instead of simple alerts.
 
 ## How to run
 
@@ -47,7 +36,7 @@ your http server of choice such as Nginx or Apache, just don't forget about the 
 ```
 ## About the webservice
 
-The README.md explaining on how to run the back-end is available at the server repository: [https://github.com/raphaelkoszalka/forecaster-webservice]
+The README.md explaining on how to run the back-end is available at the server repository: [https://github.com/raphaelkoszalka/forecast-webservice]
 
 
 ## Further help or doubts
