@@ -47,7 +47,7 @@ your http server of choice such as Nginx or Apache, just don't forget about the 
 ```
 ## About the webservice
 
-The README.md explaining on how to run the back-end is available at the server repository: [https://github.com/raphaelkoszalka/forecaster-server]
+The README.md explaining on how to run the back-end is available at the server repository: [https://github.com/raphaelkoszalka/forecaster-webservice]
 
 
 ## Further help or doubts

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpService } from '../../service/http.service';
 import { AppConstants } from '../../app-constants';
 import { CityModel } from './city.model';
@@ -8,7 +8,6 @@ import { CityModel } from './city.model';
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.scss']
 })
-
 export class CityComponent {
 
   public cityName: string;
