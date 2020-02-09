@@ -5,7 +5,7 @@ import {Component, Input, OnInit} from '@angular/core';
   templateUrl: './city-card.component.html',
   styleUrls: ['./city-card.component.scss']
 })
-export class CityCardComponent implements OnInit  {
+export class CityCardComponent {
 
   @Input()
   public city: object;
@@ -13,7 +13,4 @@ export class CityCardComponent implements OnInit  {
   constructor() {
   }
 
-  ngOnInit(): void {
-    console.log(this.city);
-  }
 }
