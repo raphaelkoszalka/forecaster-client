@@ -21,7 +21,7 @@ export class HttpService {
     if (error.status === 404) {
       // just to show the user the operation error,
       // end product would have a snackbar instead of a simple alert
-      alert('City does not exists at Open Weather API Map.');
+      alert('City does not exists on Open Weather API Map.');
       return Observable.throw(error.message || 'city already exists');
     }
 
