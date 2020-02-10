@@ -22,6 +22,8 @@ export class CityComponent {
         this.city = { city: res['name'], lat: res['coord']['lat'], lng: res['coord']['lon'] };
         this.http.post(AppConstants.SERVER_API_POST, this.city)
           .subscribe(postRes => {
+            // just to show the user the operation success,
+            // end product would have a snackbar instead of a simple alert
             alert('City saved with success.');
             this.router.navigate(['/']);
           });
