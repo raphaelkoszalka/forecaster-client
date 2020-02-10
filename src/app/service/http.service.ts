@@ -11,9 +11,21 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   private static errorHandler(error: HttpErrorResponse) {
-    // just to show the user the operation error,
-    // end product would have a snackbar instead of a simple alert
-    return Observable.throw(error.message || alert('Error saving city.'));
+    if (error.status === 409) {
+      // just to show the user the operation error,
+      // end product would have a snackbar instead of a simple alert
+      alert('City already exists.');
+      return Observable.throw(error.message || 'city already exists');
+    }
+
+    if (error.status === 404) {
+      // just to show the user the operation error,
+      // end product would have a snackbar instead of a simple alert
+      alert('City does not exists at Open Weather API Map.');
+      return Observable.throw(error.message || 'city already exists');
+    }
+
+    return Observable.throw(error.message || 'city already exists');
   }
 
   public get(endpoint: string): Observable<object> {
